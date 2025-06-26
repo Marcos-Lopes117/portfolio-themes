@@ -18,13 +18,56 @@
         <h1>Marcos Vinicius Lopes</h1>
         <img id="profile-photo" src="/assets/foto-futurista.jpg" alt="Foto de Marcos Lopes" class="profile-photo">
         <div style="margin-top: 10px;">
-            <button onclick="setTheme('style-old.css', '/assets/foto-old.jpg')">Old Theme</button>
-            <button onclick="setTheme('style-moderna.css', '/assets/foto-moderna.jpg')">Moderna</button>
-            <button onclick="setTheme('style-futurista.css', '/assets/foto-futurista.jpg')">Futurista</button>
+            <button onclick="setTheme('style-old.css', 'assets/foto-old.jpg')">Vintage</button>
+            <button onclick="setTheme('style-moderna.css', 'assets/foto-moderna.jpg')">Moderno</button>
+            <button onclick="setTheme('style-futurista.css', 'assets/foto-futurista.jpg')">Futurista</button>
         </div>
     </header>
 
+
     <nav>
+
+    <!-- FOTO DE PERFIL -->
+    <img id="profile-photo" src="assets/foto-futurista.jpg" alt="Foto de Marcos Lopes" class="profile-photo">
+
+    <!-- SEÇÃO PROJETOS -->
+    <div class="carousel">
+        <div class="swiper">
+            <h4 style="text-align: center;">Projetos</h4>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/projeto1.jpg" alt="App - o caminho" class="carousel-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/projeto2.jpg" alt="Projeto 2" class="carousel-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/projeto3.jpg" alt="Projeto 3" class="carousel-image">
+                </div>
+            </div>
+            
+            <!-- Paginação e botões -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    
+    <div class="content">
+        <h2>Sobre Mim</h2>
+        <p>
+            Olá, sou Marcos Lopes, desenvolvedor full stack Jr. apaixonado por tecnologia.
+            Aqui você encontrará meus projetos, habilidades e formas de contato.
+        </p>
+
+        <h2>Objetivo Profissional</h2>
+        <p>
+            Desenvolvedor Full Stack Jr. — buscando oportunidades para aplicar minhas habilidades e crescer na área de desenvolvimento de software.
+        </p>
+
+        <h2>Projetos Recentes</h2>
+
         <ul>
             <li><a href="#sobre-mim">Sobre Mim</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
