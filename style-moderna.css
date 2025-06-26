@@ -4,115 +4,305 @@ body {
     margin: 0;
     font-family: 'Poppins', 'Helvetica Neue', 'Roboto', sans-serif;
     background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* suave com um leve azul */
-    color: #2b2d42;
+    color: #2b2d42; /* Cinza escuro, quase preto para legibilidade */
 }
 
+/* --- HEADER --- */
 header {
-    padding: 20px;
+    padding: 25px 20px; /* Mais padding para o header */
     text-align: center;
     background: #ffffff;
-    border-bottom: 3px solid #3f72af;
-    font-size: 2em;
+    border-bottom: 3px solid #3f72af; /* Linha azul vibrante */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para o header */
+}
+
+header h1 {
+    font-size: 2.8em; /* Aumentado para destaque */
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #112d4e;
+    margin-bottom: 15px;
+    color: #112d4e; /* Azul marinho escuro */
+    font-weight: 700; /* Negrito para o título */
+}
+
+header .profile-photo {
+    display: block;
+    margin: 25px auto; /* Mais espaço vertical */
+    width: 180px; /* Aumentei um pouco a foto */
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #3f72af; /* Borda azul vibrante */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra mais visível */
+    object-fit: cover;
 }
 
 /* Botões modernos com mais cor */
 header button {
-    background: #3f72af;
+    background: #3f72af; /* Azul principal */
     color: #ffffff;
     border: none;
-    padding: 8px 16px;
-    margin: 8px 6px;
+    padding: 10px 20px; /* Mais padding para um toque moderno */
+    margin: 8px 8px; /* Mais espaço entre botões */
     font-family: 'Poppins', sans-serif;
-    font-size: 0.95em;
+    font-size: 1em; /* Tamanho da fonte ligeiramente maior */
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Mais arredondado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    font-weight: 600; /* Seminegrito */
 }
 
 header button:hover {
-    background: #112d4e;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #112d4e; /* Azul marinho no hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Efeito de elevação sutil */
 }
 
 header button:active {
-    background: #0b1a36;
-    transform: scale(0.97);
+    background: #0b1a36; /* Tom mais escuro no active */
+    transform: translateY(1px) scale(0.98);
 }
 
-.profile-photo {
-    display: block;
-    margin: 20px auto;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 4px solid #3f72af;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    object-fit: cover;
-}
-
-.carousel {
-    margin: 30px auto;
-    max-width: 900px;
-    height: 400px;
-    background: #ffffff;
-    border: 2px solid #3f72af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #2b2d42;
-    font-size: 1.5em;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.content {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 24px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e0e0e0;
-    font-size: 1.1em;
-    line-height: 1.7em;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
+/* --- NAVIGATION --- */
+nav {
+    background: #ffffff; /* Fundo branco limpo */
+    border-bottom: 1px solid #d9e2ec; /* Linha suave */
+    padding: 15px 0; /* Mais padding vertical */
     text-align: center;
-    background: #f9fafc;
-    border-top: 3px solid #3f72af;
-    font-size: 1em;
-    color: #555;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03); /* Sombra muito suave */
 }
 
-.swiper {
-    margin: 30px auto;
-    max-width: 900px;
-    height: 400px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 20px; /* Mais espaçamento entre os itens */
+}
+
+nav ul li a {
+    color: #112d4e; /* Azul marinho para os links */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+    border-radius: 6px;
+    font-weight: 500; /* Peso médio da fonte */
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    background: #3f72af; /* Fundo azul vibrante no hover */
+    transform: translateY(-2px); /* Leve elevação */
+}
+
+/* --- MAIN CONTENT AREA --- */
+main {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff; /* Fundo branco para a main */
     border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+    border: 1px solid #e0e0e0; /* Borda cinza clara */
+}
+
+/* --- SECTIONS --- */
+section {
+    padding: 40px; /* Mais padding */
+    margin-bottom: 50px;
+    background: #fdfdfd; /* Fundo quase branco para as seções */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra mais sutil que a do main */
+    border: 1px solid #edf2f7; /* Borda muito clara */
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: 30px;
+    color: #3f72af; /* Azul principal para os títulos */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #d9e2ec; /* Linha suave abaixo do título */
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+section h3 {
+    font-size: 1.8em;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    color: #2b2d42;
+    border-left: 6px solid #3f72af; /* Borda lateral azul */
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+section p, section ul {
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #4a4e69; /* Um cinza um pouco mais escuro para o texto */
+}
+
+section ul {
+    list-style: none; /* Remove bullets padrão */
+    padding-left: 0; /* Remove padding padrão */
+}
+
+section ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px; /* Espaço para o bullet customizado */
+}
+
+section ul li::before { /* Bullet customizado */
+    content: '•'; /* Ou '»', '—', etc. */
+    color: #3f72af; /* Cor do bullet */
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* --- ASIDE --- */
+aside {
+    padding: 30px;
+    margin-bottom: 50px;
+    background: #e0f2f7; /* Fundo azul claro para destaque */
+    border-radius: 10px;
+    border: 1px solid #a7d9f7; /* Borda azul clara */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+aside h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #112d4e;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin-bottom: 12px;
+}
+
+aside ul li a {
+    color: #3f72af; /* Azul para os links */
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+aside ul li a:hover {
+    color: #112d4e;
+    transform: translateX(5px); /* Desliza um pouco para a direita */
+}
+
+/* --- SWIPER / CAROUSEL STYLES --- */
+.swiper {
+    margin: 40px auto;
+    max-width: 900px;
+    height: 450px; /* Um pouco mais alto */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     background: #ffffff;
-    border: 2px solid #3f72af;
+    border: 2px solid #3f72af; /* Borda azul vibrante */
 }
 
 .swiper-slide {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .carousel-image {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    max-height: 80%; /* Mais espaço para descrição */
     object-fit: contain;
-    border-radius: 12px;
-    background-color: #f5f7fa;
+    border-radius: 10px; /* Levemente arredondado */
+    background-color: #f5f7fa; /* Fundo muito claro para a imagem */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.swiper-slide p {
+    margin-top: 18px;
+    font-size: 1.2em;
+    color: #2b2d42;
+    text-align: center;
+    font-weight: 500; /* Semi-bold */
+}
+
+/* Swiper Pagination and Navigation */
+.swiper-pagination-bullet {
+    background: #d9e2ec !important; /* Cor suave para os pontos */
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #3f72af !important; /* Cor vibrante para o ativo */
+    box-shadow: 0 0 8px rgba(63, 114, 175, 0.7);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #3f72af !important; /* Cor azul vibrante para as setas */
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #112d4e !important;
+    transform: scale(1.1);
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 60px;
+    padding: 25px;
+    text-align: center;
+    background: #f9fafc; /* Fundo muito claro */
+    border-top: 3px solid #3f72af; /* Linha azul vibrante */
+    font-size: 0.95em;
+    color: #555;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03); /* Sombra suave para o footer */
+}
+
+footer a {
+    color: #3f72af; /* Azul para os links no rodapé */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #112d4e;
+    text-decoration: underline; /* Sublinhado no hover */
+}
+
+footer p {
+    margin: 5px 0;
 }
