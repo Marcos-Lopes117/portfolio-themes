@@ -33,12 +33,19 @@ h1, h2, h3, p, ul {
     padding: 0;
 }
 
+/* --- Ajuste para h1: Font-size Fluido com clamp() --- */
 h1 {
-    font-size: 2.8em;
+    /* clamp(tamanho_minimo, tamanho_preferido_baseado_no_viewport, tamanho_maximo) */
+    /* Garante que o h1 nunca seja menor que 1.8em e nunca maior que 2.8em,
+       e tentará ser 6vw (6% da largura do viewport) quando possível. */
+    font-size: clamp(1.8em, 6vw, 2.8em);
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-color-light-vintage);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    white-space: nowrap; /* Evita que o texto quebre linha se possível */
+    overflow: hidden; /* Oculta qualquer parte do texto que exceda a largura */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for cortado */
 }
 
 h2 {
@@ -363,7 +370,6 @@ footer p { /* Seletor por elemento */
 /* Padrão para telas maiores (Desktop) */
 @media (min-width: 992px) {
     main {
-        /* Define 3 colunas, a do meio maior para conteúdo principal */
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-areas:
             "about about about"
@@ -373,38 +379,33 @@ footer p { /* Seletor por elemento */
     }
 
     #skills {
-        /* Alinha a seção de habilidades na coluna da esquerda */
         grid-column: 1 / 2;
-        margin-right: 20px; /* Ajuste manual para espaço entre colunas */
+        margin-right: 20px;
     }
 
     #projects {
-        /* Faz com que a seção de projetos ocupe 2 colunas */
         grid-column: 2 / 4;
     }
 
     aside {
-        /* Coloca o aside na coluna da direita */
         grid-column: 3 / 4;
-        margin-left: 20px; /* Ajuste manual para espaço entre colunas */
+        margin-left: 20px;
     }
 
     #certificados {
-        /* Faz com que os certificados ocupem as duas primeiras colunas */
         grid-column: 1 / 3;
         margin-right: 20px;
     }
     
     #contato {
-        grid-column: 1 / -1; /* Ocupa todas as colunas */
+        grid-column: 1 / -1;
     }
 }
-
 
 /* Telas médias (Tablets, 769px a 991px) */
 @media (max-width: 991px) and (min-width: 769px) {
     main {
-        grid-template-columns: 1fr 1fr; /* Duas colunas */
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "about about"
             "skills projects"
@@ -413,7 +414,7 @@ footer p { /* Seletor por elemento */
     }
 
     #about {
-        grid-column: 1 / -1; /* Ocupa as duas colunas */
+        grid-column: 1 / -1;
     }
     #skills {
         grid-column: 1 / 2;
@@ -428,11 +429,11 @@ footer p { /* Seletor por elemento */
         grid-column: 2 / 3;
     }
     #contato {
-        grid-column: 1 / -1; /* Ocupa as duas colunas */
+        grid-column: 1 / -1;
     }
 
     /* Ajustes gerais */
-    h1 { font-size: 2.5em; }
+    h1 { font-size: clamp(2em, 5vw, 2.5em); } /* Ajuste para h1 em tablets */
     h2 { font-size: 1.8em; }
     h3 { font-size: 1.4em; }
     p, section ul li { font-size: 1.05em; }
@@ -442,12 +443,11 @@ footer p { /* Seletor por elemento */
 /* Telas menores (Celulares, até 768px) */
 @media (max-width: 768px) {
     :root {
-        --max-content-width: 95%; /* Conteúdo ocupa mais largura em telas menores */
+        --max-content-width: 95%;
     }
 
-    /* Main já está com 1fr no padrão, então as áreas se empilham */
     main {
-        grid-template-columns: 1fr; /* Garante uma única coluna */
+        grid-template-columns: 1fr;
         grid-template-areas:
             "about"
             "skills"
@@ -455,10 +455,10 @@ footer p { /* Seletor por elemento */
             "certs"
             "aside"
             "contact";
-        padding: 20px; /* Reduzir padding para mobile */
+        padding: 20px;
     }
 
-    h1 { font-size: 2em; }
+    h1 { font-size: clamp(1.6em, 8vw, 2em); } /* Ajuste para h1 em celulares */
     h2 { font-size: 1.6em; }
     h3 { font-size: 1.3em; }
     p, section ul li { font-size: 1em; }
@@ -469,36 +469,36 @@ footer p { /* Seletor por elemento */
     }
 
     nav ul {
-        flex-direction: column; /* Menu de navegação em coluna */
-        gap: 8px; /* Espaçamento reduzido */
+        flex-direction: column;
+        gap: 8px;
     }
 
     nav ul li {
-        margin: 0; /* Remove margem lateral */
+        margin: 0;
     }
 
     header .profile-photo {
-        width: 150px; /* Reduzir tamanho da foto */
+        width: 150px;
         height: 150px;
     }
 
     section, aside {
-        padding: 20px; /* Reduzir padding interno */
-        margin-bottom: 30px; /* Reduzir margem entre seções */
+        padding: 20px;
+        margin-bottom: 30px;
     }
 
     .swiper {
-        height: 300px; /* Reduzir altura do carrossel */
-        max-width: 95%; /* Ocupar mais largura disponível */
+        height: 300px;
+        max-width: 95%;
     }
 
     .swiper-button-next, .swiper-button-prev {
-        transform: scale(0.8); /* Reduzir tamanho dos botões do Swiper */
+        transform: scale(0.8);
     }
 
     .carousel-image {
         width: 95%;
-        max-height: 70%; /* Mais espaço para texto em telas pequenas */
+        max-height: 70%;
     }
 
     section::before, section::after {
@@ -514,12 +514,12 @@ footer p { /* Seletor por elemento */
 
 /* Telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
-    h1 { font-size: 1.8em; }
+    h1 { font-size: clamp(1.4em, 9vw, 1.8em); } /* Ajuste para h1 em telas muito pequenas */
     h2 { font-size: 1.4em; }
     header button {
-        display: block; /* Cada botão em sua própria linha */
-        width: 90%; /* Ocupa quase toda a largura */
-        margin: 8px auto; /* Centraliza os botões */
+        display: block;
+        width: 90%;
+        margin: 8px auto;
     }
     nav ul {
         gap: 5px;
