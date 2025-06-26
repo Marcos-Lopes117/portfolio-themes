@@ -36,8 +36,6 @@ h1, h2, h3, p, ul {
 /* --- Ajuste para h1: Font-size Fluido com clamp() --- */
 h1 {
     /* clamp(tamanho_minimo, tamanho_preferido_baseado_no_viewport, tamanho_maximo) */
-    /* Garante que o h1 nunca seja menor que 1.8em e nunca maior que 2.8em,
-       e tentará ser 6vw (6% da largura do viewport) quando possível. */
     font-size: clamp(1.8em, 6vw, 2.8em);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -179,7 +177,8 @@ main {
     border: 1px solid #c2a178;
 
     display: grid; /* Ativando CSS Grid */
-    grid-template-columns: 1fr; /* Padrão de uma coluna para mobile */
+    /* Padrão para todas as telas: uma única coluna para todas as seções */
+    grid-template-columns: 1fr;
     gap: 50px; /* Espaço entre os itens do grid */
     grid-template-areas:
         "about"
@@ -190,11 +189,12 @@ main {
         "contact";
 }
 
-#sobre-mim { grid-area: about; } /* Seletor por ID */
+/* Atribuição de áreas permanece, mas elas se empilharão devido a grid-template-columns: 1fr; */
+#sobre-mim { grid-area: about; }
 #habilidades { grid-area: skills; }
 #projetos { grid-area: projects; }
 #certificados { grid-area: certs; }
-aside { grid-area: aside; } /* Seletor por elemento, atribuindo a área */
+aside { grid-area: aside; }
 #contato { grid-area: contact; }
 
 /* --- SECTIONS --- */
@@ -367,73 +367,30 @@ footer p { /* Seletor por elemento */
 
 /* --- Responsividade (Media Queries) com Grid --- */
 
-/* Padrão para telas maiores (Desktop) */
-@media (min-width: 992px) {
-    main {
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-areas:
-            "about about about"
-            "skills projects projects"
-            "certs certs aside"
-            "contact contact contact";
-    }
-
-    #skills {
-        grid-column: 1 / 2;
-        margin-right: 20px;
-    }
-
-    #projects {
-        grid-column: 2 / 4;
-    }
-
-    aside {
-        grid-column: 3 / 4;
-        margin-left: 20px;
-    }
-
-    #certificados {
-        grid-column: 1 / 3;
-        margin-right: 20px;
-    }
-    
-    #contato {
-        grid-column: 1 / -1;
-    }
+/* Ajuste para garantir que tudo fique em uma única coluna por padrão */
+main {
+    grid-template-columns: 1fr; /* Força uma única coluna para todas as resoluções */
+    grid-template-areas:
+        "about"
+        "skills"
+        "projects"
+        "certs"
+        "aside"
+        "contact";
+    /* Remove as margens manuais que estavam separando colunas, pois agora é uma só */
+    #skills { margin-right: 0; }
+    #projects { /* Não precisa de grid-column explícito, pois já está em 1fr */ }
+    aside { margin-left: 0; }
+    #certificados { margin-right: 0; }
+    #contato { /* Não precisa de grid-column explícito */ }
 }
+
+/* As media queries agora servem principalmente para ajustes de tipografia e espaçamento geral */
 
 /* Telas médias (Tablets, 769px a 991px) */
 @media (max-width: 991px) and (min-width: 769px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "about about"
-            "skills projects"
-            "certs aside"
-            "contact contact";
-    }
-
-    #about {
-        grid-column: 1 / -1;
-    }
-    #skills {
-        grid-column: 1 / 2;
-    }
-    #projects {
-        grid-column: 2 / 3;
-    }
-    #certificados {
-        grid-column: 1 / 2;
-    }
-    aside {
-        grid-column: 2 / 3;
-    }
-    #contato {
-        grid-column: 1 / -1;
-    }
-
     /* Ajustes gerais */
-    h1 { font-size: clamp(2em, 5vw, 2.5em); } /* Ajuste para h1 em tablets */
+    h1 { font-size: clamp(2em, 5vw, 2.5em); }
     h2 { font-size: 1.8em; }
     h3 { font-size: 1.4em; }
     p, section ul li { font-size: 1.05em; }
@@ -446,19 +403,7 @@ footer p { /* Seletor por elemento */
         --max-content-width: 95%;
     }
 
-    main {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "about"
-            "skills"
-            "projects"
-            "certs"
-            "aside"
-            "contact";
-        padding: 20px;
-    }
-
-    h1 { font-size: clamp(1.6em, 8vw, 2em); } /* Ajuste para h1 em celulares */
+    h1 { font-size: clamp(1.6em, 8vw, 2em); }
     h2 { font-size: 1.6em; }
     h3 { font-size: 1.3em; }
     p, section ul li { font-size: 1em; }
@@ -514,7 +459,7 @@ footer p { /* Seletor por elemento */
 
 /* Telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
-    h1 { font-size: clamp(1.4em, 9vw, 1.8em); } /* Ajuste para h1 em telas muito pequenas */
+    h1 { font-size: clamp(1.4em, 9vw, 1.8em); }
     h2 { font-size: 1.4em; }
     header button {
         display: block;
