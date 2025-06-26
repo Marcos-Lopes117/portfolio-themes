@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <title>Marcos Vinicius Lopes - Portfólio</title>
-    
-    <!-- LINK CSS DINÂMICO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link id="theme-style" rel="stylesheet" href="style-futurista.css">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
 
     <header>
-        Marcos Vinicius Lopes
-
-        <!-- BOTÕES PARA TROCAR O TEMA -->
+        <h1>Marcos Vinicius Lopes</h1>
+        <img id="profile-photo" src="/assets/foto-futurista.jpg" alt="Foto de Marcos Lopes" class="profile-photo">
         <div style="margin-top: 10px;">
             <button onclick="setTheme('style-old.css', 'assets/foto-old.jpg')">Vintage</button>
             <button onclick="setTheme('style-moderna.css', 'assets/foto-moderna.jpg')">Moderno</button>
             <button onclick="setTheme('style-futurista.css', 'assets/foto-futurista.jpg')">Futurista</button>
         </div>
     </header>
+
+
+    <nav>
 
     <!-- FOTO DE PERFIL -->
     <img id="profile-photo" src="assets/foto-futurista.jpg" alt="Foto de Marcos Lopes" class="profile-photo">
@@ -64,126 +67,184 @@
         </p>
 
         <h2>Projetos Recentes</h2>
-        <ul>
-            <li>Projeto 1 - App O caminho</li>
-            <li>Projeto 2 - Website Portfólio</li>
-            <li>Projeto 3 - Sistema Z</li>
-        </ul>
 
-        <h2>Habilidades</h2>
         <ul>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            <li>PHP</li>
-            <li>MySQL</li>
-            <li>PostgreSQL</li>
-            <li>C#</li>
-            <li>React</li>
-            <li>Node.js</li>
+            <li><a href="#sobre-mim">Sobre Mim</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#certificados">Certificados</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <!-- SEÇÃO DE CERTIFICADOS -->
-    <div class="carousel">
-        <div class="swiper certificados-swiper">
-            <h4 style="text-align: center;">Certificados</h4>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="certificados/certificado1.jpg" alt="Certificado 1" class="carousel-image">
+    <main>
+        <section id="sobre-mim">
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá, sou Marcos Lopes, desenvolvedor full stack Jr. apaixonado por tecnologia.
+                Aqui você encontrará meus projetos, habilidades e formas de contato.
+            </p>
+            <h3>Objetivo Profissional</h3>
+            <p>
+                Desenvolvedor Full Stack Jr. — buscando oportunidades para aplicar minhas habilidades e crescer na área
+                de desenvolvimento de software.
+            </p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>C#</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="carousel">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/projeto1.jpg" alt="App - o caminho" class="carousel-image">
+                            <p>Projeto 1 - App O caminho</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/projeto2.jpg" alt="Projeto 2" class="carousel-image">
+                            <p>Projeto 2 - Website Portfólio</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/projeto3.jpg" alt="Projeto 3" class="carousel-image">
+                            <p>Projeto 3 - Sistema Z</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado2.jpg" alt="Certificado 2" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado3.jpg" alt="Certificado 3" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado4.jpg" alt="Certificado 4" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado5.jpg" alt="Certificado 5" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado6.jpg" alt="Certificado 6" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado7.jpg" alt="Certificado 7" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado8.jpg" alt="Certificado 8" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado9.jpg" alt="Certificado 9" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado10.jpg" alt="Certificado 10" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado11.jpg" alt="Certificado 11" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado12.jpg" alt="Certificado 12" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado13.jpg" alt="Certificado 13" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado14.jpg" alt="Certificado 14" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado15.jpg" alt="Certificado 15" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado16.jpg" alt="Certificado 16" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado17.jpg" alt="Certificado 17" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado18.jpg" alt="Certificado 18" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado19.jpg" alt="Certificado 19" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado20.jpg" alt="Certificado 20" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado21.jpg" alt="Certificado 21" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado22.jpg" alt="Certificado 22" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado23.jpg" alt="Certificado 23" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado24.jpg" alt="Certificado 24" class="carousel-image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="certificados/certificado25.jpg" alt="Certificado 25" class="carousel-image">
-                </div>
-                <!-- adicione mais certificados aqui -->
             </div>
+        </section>
 
-            <!-- Paginação e botões -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </div>
+        <section id="certificados">
+            <h2>Certificados</h2>
+            <div class="carousel">
+                <div class="swiper certificados-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado1.jpg" alt="Certificado 1" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado2.jpg" alt="Certificado 2" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado3.jpg" alt="Certificado 3" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado4.jpg" alt="Certificado 4" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado5.jpg" alt="Certificado 5" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado6.jpg" alt="Certificado 6" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado7.jpg" alt="Certificado 7" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado8.jpg" alt="Certificado 8" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado9.jpg" alt="Certificado 9" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado10.jpg" alt="Certificado 10" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado11.jpg" alt="Certificado 11" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado12.jpg" alt="Certificado 12" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado13.jpg" alt="Certificado 13" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado14.jpg" alt="Certificado 14" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado15.jpg" alt="Certificado 15" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado16.jpg" alt="Certificado 16" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado17.jpg" alt="Certificado 17" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado18.jpg" alt="Certificado 18" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado19.jpg" alt="Certificado 19" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado20.jpg" alt="Certificado 20" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado21.jpg" alt="Certificado 21" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado22.jpg" alt="Certificado 22" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado23.jpg" alt="Certificado 23" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado24.jpg" alt="Certificado 24" class="carousel-image">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="certificados/certificado25.jpg" alt="Certificado 25" class="carousel-image">
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <aside>
+            <h3>Redes Sociais e Links Úteis</h3>
+            <ul>
+                <li><a href="https://linkedin.com/in/seuperfil" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/seuperfil" target="_blank">GitHub</a></li>
+            </ul>
+        </aside>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Sinta-se à vontade para entrar em contato comigo através das seguintes opções:</p>
+            <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/5521991019113" target="_blank">21
+                    99101-9113</a></p>
+            <p><strong>Email:</strong> <a href="mailto:m.vd2prog2@gmail.com">m.vd2prog2@gmail.com</a></p>
+        </section>
+    </main>
 
     <footer>
-        Telefone / WhatsApp: <a href="https://wa.me/5521991019113" target="_blank">21 99101-9113</a> — 
-        Email: <a href="mailto:m.vd2prog2@gmail.com">m.vd2prog2@gmail.com</a>
-       <br> © 2025 Marcos Lopes. Todos os direitos reservados. <br>
-       
+        <p>&copy; 2025 Marcos Lopes. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <span style="color: red;">&hearts;</span> e código.</p>
     </footer>
 
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Inicialização do Swiper -->
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
@@ -219,7 +280,6 @@
         });
     </script>
 
-    <!-- SCRIPT PARA TROCAR TEMA E FOTO -->
     <script>
         function setTheme(themeCss, profilePhoto) {
             document.getElementById('theme-style').setAttribute('href', themeCss);
@@ -227,5 +287,16 @@
         }
     </script>
 
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

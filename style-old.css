@@ -1,114 +1,535 @@
-/* ======= TEMA VINTAGE ======= */
+/* --- Variáveis CSS --- */
+:root {
+    --primary-vintage-color: #8b5e3c; /* Marrom envelhecido principal */
+    --secondary-vintage-color: #d2b48c; /* Bege areia / Dourado antigo */
+    --tertiary-vintage-color: #4b2e2e; /* Marrom escuro para texto */
+    --background-vintage-light: #f5f5dc; /* Bege suave */
+    --background-vintage-dark: #e0d8b0; /* Dourado antigo */
+    --text-color-light-vintage: #fff8dc; /* Marfim */
+    --text-color-dark-vintage: #4b2e2e; /* Marrom escuro */
+    --shadow-vintage-soft: rgba(75, 46, 46, 0.4);
+    --shadow-vintage-strong: rgba(75, 46, 46, 0.6);
+    --border-vintage-medium: #8b5e3c;
+    --border-vintage-light: #d2b48c;
+    --card-bg-vintage: rgba(255, 248, 220, 0.85); /* Fundo de papel antigo */
+    --card-bg-vintage-light: rgba(255, 248, 220, 0.8);
+    --transition-speed-vintage: 0.3s;
+    --max-content-width: 1000px;
+}
 
+/* --- Seletores de Elemento e Estilos Base --- */
 body {
     margin: 0;
     font-family: 'Georgia', serif;
-    background: linear-gradient(135deg, #f5f5dc, #e0d8b0); /* bege suave com dourado antigo */
-    color: #4b2e2e; /* marrom escuro, clássico */
+    background: linear-gradient(135deg, var(--background-vintage-light), var(--background-vintage-dark));
+    color: var(--text-color-dark-vintage);
+    line-height: 1.8; /* Melhorar legibilidade vintage */
+    overflow-x: hidden;
 }
 
-header {
-    padding: 20px;
+h1, h2, h3, p, ul {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color-light-vintage);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 2.2em;
     text-align: center;
-    background: #8b5e3c; /* marrom envelhecido */
-    border-bottom: 4px double #d2b48c; /* borda estilo clássico */
-    font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff8dc; /* cor marfim */
+    color: var(--primary-vintage-color);
+    border-bottom: 2px solid var(--secondary-vintage-color);
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* Botões vintage */
-header button {
-    background: #d2b48c; /* bege areia */
-    color: #4b2e2e;
-    border: 2px solid #8b5e3c;
-    padding: 5px 10px;
-    margin: 8px 4px;
-    font-family: 'Georgia', serif;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 2px 2px 5px rgba(75, 46, 46, 0.5);
-    transition: all 0.3s ease;
+h3 {
+    font-size: 1.6em;
+    color: var(--text-color-dark-vintage);
+    margin-top: 35px;
+    margin-bottom: 18px;
+    border-left: 5px solid var(--secondary-vintage-color);
+    padding-left: 10px;
 }
 
-header button:hover {
-    background: #c2a178;
-    box-shadow: 2px 2px 7px rgba(75, 46, 46, 0.7);
+p {
+    font-size: 1.15em;
+    color: var(--text-color-dark-vintage);
 }
 
-header button:active {
-    background: #b08a5e;
-    transform: scale(0.97);
+ul {
+    list-style: none; /* Remove bullets padrão */
+    padding-left: 0;
 }
 
-.profile-photo {
+a {
+    color: var(--primary-vintage-color);
+    text-decoration: none;
+    transition: all var(--transition-speed-vintage) ease;
+}
+
+/* --- HEADER --- */
+header {
+    padding: 25px 20px;
+    text-align: center;
+    background: var(--primary-vintage-color);
+    border-bottom: 4px double var(--secondary-vintage-color);
+    color: var(--text-color-light-vintage);
+    display: flex; /* Uso de Flexbox para centralizar */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header .profile-photo { /* Seletor por classe */
     display: block;
     margin: 20px auto;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 4px solid #8b5e3c;
-    box-shadow: 0 0 15px rgba(75, 46, 46, 0.5);
+    border: 5px solid var(--secondary-vintage-color);
+    box-shadow: 0 0 18px var(--shadow-vintage-strong), inset 0 0 5px rgba(255, 248, 220, 0.5);
     object-fit: cover;
 }
 
-.carousel {
-    margin: 30px auto;
-    max-width: 800px;
-    height: 400px;
-    background: rgba(255, 248, 220, 0.7); /* cor de fundo suave "papel antigo" */
-    border: 3px ridge #8b5e3c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4b2e2e;
-    font-size: 1.4em;
-    border-radius: 10px;
-}
-
-.content {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(255, 248, 220, 0.85); /* tom de papel antigo */
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(75, 46, 46, 0.3);
-    border: 1px solid #8b5e3c;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    background: #8b5e3c;
-    border-top: 4px double #d2b48c;
+header button { /* Seletor por elemento */
+    background: var(--secondary-vintage-color);
+    color: var(--tertiary-vintage-color);
+    border: 2px solid var(--primary-vintage-color);
+    padding: 8px 18px;
+    margin: 8px 6px;
+    font-family: 'Georgia', serif;
     font-size: 1em;
-    color: #fff8dc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px var(--shadow-vintage-strong);
+    transition: all var(--transition-speed-vintage) ease;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-.swiper {
-    margin: 30px auto;
-    max-width: 800px;
-    height: 400px;
+header button:hover { /* Pseudo-classe */
+    background: #c2a178;
+    box-shadow: 4px 4px 9px rgba(75, 46, 46, 0.8);
+    transform: translateY(-2px);
+}
+
+header button:active { /* Pseudo-classe */
+    background: #b08a5e;
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 1px 1px 3px var(--shadow-vintage-soft);
+}
+
+/* --- NAVIGATION --- */
+nav {
+    background: #a07a50;
+    border-bottom: 2px solid var(--secondary-vintage-color);
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--shadow-vintage-soft);
+}
+
+nav ul {
+    display: flex; /* Uso de Flexbox */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px; /* Espaçamento com gap para Flexbox */
+}
+
+nav ul li a {
+    color: var(--text-color-light-vintage);
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a:hover { /* Pseudo-classe */
+    color: var(--text-color-dark-vintage);
+    background: var(--secondary-vintage-color);
+    text-shadow: none;
+}
+
+/* --- MAIN CONTENT AREA (usando CSS Grid para o layout principal) --- */
+main {
+    max-width: var(--max-content-width);
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--card-bg-vintage);
     border-radius: 10px;
-    box-shadow: 0 0 12px rgba(75, 46, 46, 0.5);
-    background: rgba(255, 248, 220, 0.7);
+    box-shadow: 0 5px 15px var(--shadow-vintage-soft);
+    border: 1px solid #c2a178;
+
+    display: grid; /* Ativando CSS Grid */
+    grid-template-columns: 1fr; /* Padrão de uma coluna para mobile */
+    gap: 50px; /* Espaço entre os itens do grid */
+    grid-template-areas:
+        "about"
+        "skills"
+        "projects"
+        "certs"
+        "aside"
+        "contact";
 }
 
-.swiper-slide {
+#sobre-mim { grid-area: about; } /* Seletor por ID */
+#habilidades { grid-area: skills; }
+#projetos { grid-area: projects; }
+#certificados { grid-area: certs; }
+aside { grid-area: aside; } /* Seletor por elemento, atribuindo a área */
+#contato { grid-area: contact; }
+
+/* --- SECTIONS --- */
+section { /* Seletor por elemento */
+    padding: 35px;
+    background: var(--card-bg-vintage-light);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(75, 46, 46, 0.2);
+    border: 1px solid var(--secondary-vintage-color);
+    position: relative;
+    overflow: hidden;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Pseudo-elementos para decoração de seção */
+section::before { /* Pseudo-elemento */
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    border-top: 3px solid var(--primary-vintage-color);
+    border-left: 3px solid var(--primary-vintage-color);
+    opacity: 0.6;
+}
+
+section::after { /* Pseudo-elemento */
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    border-bottom: 3px solid var(--primary-vintage-color);
+    border-right: 3px solid var(--primary-vintage-color);
+    opacity: 0.6;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 1.8em; /* Espaço para o bullet customizado */
+}
+
+/* Pseudo-elemento para bullets de lista customizados */
+section ul li::before { /* Pseudo-elemento */
+    content: '\2726'; /* Caractere de estrela para vintage */
+    color: var(--primary-vintage-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* --- ASIDE --- */
+aside { /* Seletor por elemento */
+    padding: 30px;
+    background: rgba(210, 180, 140, 0.7);
+    border-radius: 10px;
+    border: 2px dashed var(--primary-vintage-color);
+    box-shadow: 0 2px 8px var(--shadow-vintage-soft);
+    text-align: center;
+}
+
+aside ul {
+    display: flex; /* Uso de Flexbox para os links */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Espaçamento entre os links */
+}
+
+aside ul li a:hover { /* Pseudo-classe */
+    color: var(--primary-vintage-color);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Pequeno zoom */
+}
+
+/* --- SWIPER / CAROUSEL STYLES --- */
+.swiper { /* Seletor por classe */
+    margin: 40px auto;
+    max-width: 850px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow-vintage-strong);
+    background: var(--card-bg-vintage);
+    border: 3px groove var(--primary-vintage-color);
+}
+
+.swiper-slide { /* Seletor por classe */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
-.carousel-image {
-    width: 100%;
-    height: 100%;
+.carousel-image { /* Seletor por classe */
+    width: 95%;
+    max-height: 85%;
     object-fit: contain;
-    border-radius: 10px;
-    background-color: rgba(210, 180, 140, 0.3); /* marrom claro suave */
+    border-radius: 8px;
+    background-color: rgba(210, 180, 140, 0.4);
+    box-shadow: 0 0 10px rgba(75, 46, 46, 0.3);
+    border: 1px solid rgba(139, 94, 60, 0.5);
+}
+
+.swiper-slide p { /* Seletor por elemento */
+    margin-top: 18px;
+    font-size: 1.3em;
+    color: var(--text-color-dark-vintage);
+    text-align: center;
+    font-style: italic;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Swiper Pagination and Navigation */
+.swiper-pagination-bullet { /* Seletor por classe */
+    background: var(--primary-vintage-color) !important;
+    opacity: 0.7 !important;
+}
+
+.swiper-pagination-bullet-active { /* Pseudo-classe */
+    background: var(--tertiary-vintage-color) !important;
+    box-shadow: 0 0 5px var(--tertiary-vintage-color);
+    opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev { /* Seletor por classe */
+    color: var(--primary-vintage-color) !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover { /* Pseudo-classe */
+    color: var(--tertiary-vintage-color) !important;
+    text-shadow: 0 0 8px var(--tertiary-vintage-color);
+    transform: scale(1.1);
+}
+
+/* --- FOOTER --- */
+footer { /* Seletor por elemento */
+    margin-top: 70px;
+    padding: 30px;
+    text-align: center;
+    background: var(--primary-vintage-color);
+    border-top: 4px double var(--secondary-vintage-color);
+    font-size: 1.05em;
+    color: var(--text-color-light-vintage);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer a { /* Seletor por elemento */
+    color: var(--secondary-vintage-color);
+    text-decoration: none;
+}
+
+footer a:hover { /* Pseudo-classe */
+    color: var(--text-color-light-vintage);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+footer p { /* Seletor por elemento */
+    margin: 8px 0;
+}
+
+/* --- Responsividade (Media Queries) com Grid --- */
+
+/* Padrão para telas maiores (Desktop) */
+@media (min-width: 992px) {
+    main {
+        /* Define 3 colunas, a do meio maior para conteúdo principal */
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+            "about about about"
+            "skills projects projects"
+            "certs certs aside"
+            "contact contact contact";
+    }
+
+    #skills {
+        /* Alinha a seção de habilidades na coluna da esquerda */
+        grid-column: 1 / 2;
+        margin-right: 20px; /* Ajuste manual para espaço entre colunas */
+    }
+
+    #projects {
+        /* Faz com que a seção de projetos ocupe 2 colunas */
+        grid-column: 2 / 4;
+    }
+
+    aside {
+        /* Coloca o aside na coluna da direita */
+        grid-column: 3 / 4;
+        margin-left: 20px; /* Ajuste manual para espaço entre colunas */
+    }
+
+    #certificados {
+        /* Faz com que os certificados ocupem as duas primeiras colunas */
+        grid-column: 1 / 3;
+        margin-right: 20px;
+    }
+    
+    #contato {
+        grid-column: 1 / -1; /* Ocupa todas as colunas */
+    }
+}
+
+
+/* Telas médias (Tablets, 769px a 991px) */
+@media (max-width: 991px) and (min-width: 769px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Duas colunas */
+        grid-template-areas:
+            "about about"
+            "skills projects"
+            "certs aside"
+            "contact contact";
+    }
+
+    #about {
+        grid-column: 1 / -1; /* Ocupa as duas colunas */
+    }
+    #skills {
+        grid-column: 1 / 2;
+    }
+    #projects {
+        grid-column: 2 / 3;
+    }
+    #certificados {
+        grid-column: 1 / 2;
+    }
+    aside {
+        grid-column: 2 / 3;
+    }
+    #contato {
+        grid-column: 1 / -1; /* Ocupa as duas colunas */
+    }
+
+    /* Ajustes gerais */
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p, section ul li { font-size: 1.05em; }
+    .swiper { height: 380px; }
+}
+
+/* Telas menores (Celulares, até 768px) */
+@media (max-width: 768px) {
+    :root {
+        --max-content-width: 95%; /* Conteúdo ocupa mais largura em telas menores */
+    }
+
+    /* Main já está com 1fr no padrão, então as áreas se empilham */
+    main {
+        grid-template-columns: 1fr; /* Garante uma única coluna */
+        grid-template-areas:
+            "about"
+            "skills"
+            "projects"
+            "certs"
+            "aside"
+            "contact";
+        padding: 20px; /* Reduzir padding para mobile */
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.3em; }
+    p, section ul li { font-size: 1em; }
+
+    header button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu de navegação em coluna */
+        gap: 8px; /* Espaçamento reduzido */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove margem lateral */
+    }
+
+    header .profile-photo {
+        width: 150px; /* Reduzir tamanho da foto */
+        height: 150px;
+    }
+
+    section, aside {
+        padding: 20px; /* Reduzir padding interno */
+        margin-bottom: 30px; /* Reduzir margem entre seções */
+    }
+
+    .swiper {
+        height: 300px; /* Reduzir altura do carrossel */
+        max-width: 95%; /* Ocupar mais largura disponível */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        transform: scale(0.8); /* Reduzir tamanho dos botões do Swiper */
+    }
+
+    .carousel-image {
+        width: 95%;
+        max-height: 70%; /* Mais espaço para texto em telas pequenas */
+    }
+
+    section::before, section::after {
+        width: 15px;
+        height: 15px;
+        border-width: 2px;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    header button {
+        display: block; /* Cada botão em sua própria linha */
+        width: 90%; /* Ocupa quase toda a largura */
+        margin: 8px auto; /* Centraliza os botões */
+    }
+    nav ul {
+        gap: 5px;
+    }
+    nav ul li a {
+        padding: 6px 8px;
+        font-size: 0.9em;
+    }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
 }
